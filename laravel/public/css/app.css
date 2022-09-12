@@ -8,7 +8,6 @@ body {
   font-family: "nunito", sans-serif;
   background-color: whitesmoke;
 }
-
 body header {
   background-color: #F26D70;
   padding-block: 1.5rem;
@@ -17,41 +16,73 @@ body header {
   left: 0;
   width: 100%;
 }
-
 body header h1 {
-  color: white;
   font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
 }
-
+body header h1 a {
+  display: inline-block;
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+body header h1 a::after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 8px;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 0;
+  background-color: white;
+  transition: 0.5s;
+}
+body header h1 a:hover::after {
+  width: 100%;
+}
 body main {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10rem 0 5rem;
 }
-
 body main a {
   display: inline-block;
+  margin-top: 10rem;
   text-decoration: none;
   color: black;
   border: 5px solid red;
   padding: 2rem 4rem;
   font-size: 3rem;
   font-weight: 900;
-  transition: 0.5s;
 }
-
 body main a:hover {
+  transition: 0.5s;
   background-color: red;
   color: white;
 }
-
-body main div.card {
-  border: 1px solid black;
+body main div.cards-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-
+body main div.cards-container div.card {
+  width: calc(25% - 2rem);
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+}
+body main div.cards-container div.card img {
+  width: 100%;
+}
+body main div.cards-container div.card h3,
+body main div.cards-container div.card h4 {
+  padding-top: 0.5rem;
+}
 body footer {
   position: fixed;
   bottom: 0;
@@ -62,4 +93,3 @@ body footer {
   color: white;
   text-align: center;
 }
-

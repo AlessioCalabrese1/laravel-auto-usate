@@ -1,5 +1,5 @@
 <header>
     <h1>
-         Car dealership
+        <a href="{{ route("homepage") }}">Car dealership</a>
     </h1>
 </header>
