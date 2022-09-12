@@ -4,13 +4,13 @@
 
 @section('main-content')
     
-    @forelse ($collection as $item)
+    @forelse ($cars as $car)
         
         <div class="card">
-            <h3>Car brand: {{ $item->brand }}</h3>
-            <h3>Car model: {{ $item->model }}</h3>
-            <h4>Year: {{ $item->year }}</h4>
-            <h4>Kms: {{ $item->km }}</h4>
+            <h3>Car brand: {{ $car->brand }}</h3>
+            <h3>Car model: {{ $car->model }}</h3>
+            <h4>Year: {{ $car->year }}</h4>
+            <h4>Kms: {{ $car->km }}</h4>
         </div>
 
     @empty
