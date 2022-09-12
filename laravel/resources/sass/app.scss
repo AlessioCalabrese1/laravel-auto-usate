@@ -6,12 +6,17 @@
 
 body {
     font-family: "nunito", sans-serif;
+    background-color: whitesmoke;
 
     
 // HEADER
     header {
         background-color: #F26D70;
         padding-block: 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
 
         h1 {
             color: white;
@@ -24,7 +29,7 @@ body {
 // MAIN
 
 main {
-    height: calc(100vh - 10rem);
+    height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;

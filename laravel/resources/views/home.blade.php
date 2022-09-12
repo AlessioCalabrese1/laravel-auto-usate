@@ -3,5 +3,5 @@
 @section('title', "Homepage")
 
 @section('main-content')
-    <a href="">BROWSE!</a>
+    <a href="{{ route("cars") }}">BROWSE!</a>
 @endsection
