@@ -19432,8 +19432,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+__webpack_require__(/*! C:\Users\danie\Desktop\Repositories\laravel-auto-usate\laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\danie\Desktop\Repositories\laravel-auto-usate\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
 __webpack_require__(/*! C:\Users\ALESSIO\Desktop\Laravel project\laravel-auto-usate\laravel\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\ALESSIO\Desktop\Laravel project\laravel-auto-usate\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> origin/main
+=======
+__webpack_require__(/*! C:\Users\Admin\Documents\BOOLEAN\ESERCIZI BOOLEAN\PHP\laravel-auto-usate\laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Admin\Documents\BOOLEAN\ESERCIZI BOOLEAN\PHP\laravel-auto-usate\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\ALESSIO\Desktop\Laravel project\laravel-auto-usate\laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ALESSIO\Desktop\Laravel project\laravel-auto-usate\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> f1656f7959c4ec3bae0454d225a5ab6df6036492
+>>>>>>> b0acbe5c173a574c828db89ccf1141ef0aea8023
 
 
 /***/ })
