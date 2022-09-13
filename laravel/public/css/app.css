@@ -57,10 +57,13 @@ body main a {
   padding: 2rem 4rem;
   font-size: 3rem;
   font-weight: 900;
+  transition: transform 0.5s;
+  border-radius: 2rem;
 }
 body main a:hover {
+  transform: scale(1.1);
   transition: 0.5s;
-  background-color: red;
+  background-color: #F26D70;
   color: white;
 }
 body main div.cards-container {
