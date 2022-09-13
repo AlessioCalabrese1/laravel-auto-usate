@@ -9,8 +9,7 @@ class CarController extends Controller
 {
     //
     public function index(){
-        $cars = Car::all();
-        dd($cars);
-        return view('home', compact("cars"));
+        $cars = Car::All();
+        return view('cars', compact("cars"));
     }
 }
