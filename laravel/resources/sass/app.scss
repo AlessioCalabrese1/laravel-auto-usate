@@ -28,6 +28,11 @@ body {
             position: relative;
             color: white;
             text-decoration: none;
+            transition: transform .3s;
+
+            &:active {
+                transform: scale(.9);
+            }
 
             &::after {
                 position: absolute;
@@ -74,6 +79,10 @@ main {
             transition: .5s;
             background-color: #F26D70;
             color: white;
+        }
+
+        &:active {
+            transform: scale(.9);
         }
     }
 
