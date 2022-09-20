@@ -52,7 +52,7 @@ body main {
   align-items: center;
   margin: 10rem 0 5rem;
 }
-body main a {
+body main a.homeBtn {
   display: inline-block;
   margin-top: 10rem;
   text-decoration: none;
@@ -64,13 +64,13 @@ body main a {
   transition: transform 0.5s;
   border-radius: 2rem;
 }
-body main a:hover {
+body main a.homeBtn:hover {
   transform: scale(1.1);
   transition: 0.5s;
   background-color: #F26D70;
   color: white;
 }
-body main a:active {
+body main a.homeBtn:active {
   transform: scale(0.9);
 }
 body main div.cards-container {
