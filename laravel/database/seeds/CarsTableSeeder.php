@@ -116,7 +116,7 @@ class CarsTableSeeder extends Seeder
 
         foreach ($cars as $car) {
             # code...
-            $newCar = new Car;
+            $newCar = new Car();
             $newCar->plate = $car['plate'];
             $newCar->brand = $car['brand'];
             $newCar->model = $car['model'];
