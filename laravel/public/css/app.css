@@ -47,10 +47,8 @@ body header h1 a:hover::after {
   width: 100%;
 }
 body main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 10rem 0 5rem;
+  text-align: center;
 }
 body main a.homeBtn {
   display: inline-block;
@@ -78,6 +76,7 @@ body main div.cards-container {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 body main div.cards-container div.card {
   width: calc(25% - 2rem);

@@ -1,7 +1,16 @@
 @extends('layouts.mainLayout')
 
 @section('main-content')
-    
+    @if ($errors->any())
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>
+                {{ $error }}
+            </li>
+        @endforeach
+    </ul>
+        
+    @endif
     <form action="{{ route($route, $car->id)  }}" method="POST">
         @csrf
         @method($method)

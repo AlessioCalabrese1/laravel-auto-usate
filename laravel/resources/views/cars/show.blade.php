@@ -3,7 +3,15 @@
 @section('title', "Cars")
 
 @section('main-content')
-
+    @if (session('created'))
+        <div>
+            {{ session('created') }}
+        </div>
+    @elseif(session('updated'))
+        <div>
+            {{ session('updated') }}
+        </div>
+    @endif
     <div class="cards-container">
             <div>
                 <img src="https://www.fepecar.it/wp-content/themes/motors/assets/images/plchldr350.png" alt="placeholder image">

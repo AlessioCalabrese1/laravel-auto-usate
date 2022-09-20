@@ -3,7 +3,11 @@
 @section('title', "Cars")
 
 @section('main-content')
-
+    @if (session('deleted'))
+        <div>
+            {{ session('deleted') }}
+        </div>
+    @endif
     <div class="cards-container">
         @forelse ($cars as $car)
             <div class="card">
@@ -14,6 +18,11 @@
                 <h4>Kms: {{ $car->km }}</h4>
                 <a href="{{ route('cars.show', $car->id) }}">View</a>
                 <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
+                <form action="{{ route('cars.destroy', $car->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Cancel</button>
+                </form>
             </div>
             
         @empty

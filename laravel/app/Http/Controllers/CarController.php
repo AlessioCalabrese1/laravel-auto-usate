@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+
+    private $validationRules = [
+        'plate' => 'required|alpha_num',
+        'brand' => 'required',
+        'model' => 'required',
+        'year' => 'required|date_format:Y',
+        'km' => 'required|numeric'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +47,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate($this->validationRules);
 
         $car = new Car();
         $car->plate = $data["plate"];
@@ -48,7 +57,7 @@ class CarController extends Controller
         $car->km = $data["km"];
         $car->save();
 
-        return redirect()->route("cars.show", $car->id);
+        return redirect()->route("cars.show", $car->id)->with('created', 'La machinetta ' . $car->model . ' con targa ' . $car->plate . ' è stata creata!');;
     }
 
     /**
@@ -86,7 +95,7 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data = $request->all();
+        $data = $request->validate($this->validationRules);
 
         $car = Car::findOrFail($id);
         $car->plate = $data["plate"];
@@ -96,8 +105,7 @@ class CarController extends Controller
         $car->km = $data["km"];
         $car->save();
 
-        return redirect()->route("cars.show", $car->id);
-
+        return redirect()->route("cars.show", $car->id)->with('updated', 'La machinetta ' . $car->model . ' con targa ' . $car->plate . ' è stata modificata!');;
     }
 
     /**
@@ -108,6 +116,8 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        $car->delete();
+        return redirect()->route('cars.index')->with('deleted', 'La machinetta ' . $car->model . ' con targa ' . $car->plate . ' è stata cancellata!');
     }
 }
