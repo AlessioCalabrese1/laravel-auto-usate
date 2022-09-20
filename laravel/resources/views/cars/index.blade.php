@@ -13,6 +13,7 @@
                 <h4>Year: {{ $car->year }}</h4>
                 <h4>Kms: {{ $car->km }}</h4>
                 <a href="{{ route('cars.show', $car->id) }}">View</a>
+                <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
             </div>
             
         @empty
