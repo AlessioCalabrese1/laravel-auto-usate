@@ -1,5 +1,6 @@
 <?php
 
+use App\Car;
 use Illuminate\Database\Seeder;
 
 class CarsTableSeeder extends Seeder
@@ -31,7 +32,7 @@ class CarsTableSeeder extends Seeder
 
         foreach ($cars as $car) {
             # code...
-            $newCar = ;
+            $newCar = new Car;
             $newCar->plate = $car['plate'];
             $newCar->brand = $car['brand'];
             $newCar->model = $car['model'];
