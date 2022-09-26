@@ -18,3 +18,5 @@ Route::get('/', function() {
 })->name("homepage");
 
 Route::resource('/cars', 'CarController');
+
+Route::resource("/optionals", "OptionalController");
