@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Optional;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -13,7 +14,8 @@ class CarController extends Controller
         'brand' => 'required',
         'model' => 'required',
         'year' => 'required|date_format:Y',
-        'km' => 'required|numeric'
+        'km' => 'required|numeric',
+        'optionals' => 'exists:optionals,id'
     ];
 
     /**
@@ -36,7 +38,8 @@ class CarController extends Controller
     public function create()
     {
         $car = new Car();
-        return view("cars.create", compact("car"));
+        $optionals = Optional::all();
+        return view("cars.create", compact('car', 'optionals'));
     }
 
     /**
@@ -56,6 +59,7 @@ class CarController extends Controller
         $car->year = $data["year"];
         $car->km = $data["km"];
         $car->save();
+        $car->optionals()->sync($data['optionals']); 
 
         return redirect()->route("cars.show", $car->id)->with('created', 'La machinetta ' . $car->model . ' con targa ' . $car->plate . ' è stata creata!');;
     }
@@ -82,7 +86,8 @@ class CarController extends Controller
     {
         //
         $car = Car::findOrFail($id);
-        return view('cars.edit', compact('car'));
+        $optionals = Optional::all();
+        return view('cars.edit', compact('car', 'optionals'));
     }
 
     /**
@@ -104,6 +109,7 @@ class CarController extends Controller
         $car->year = $data["year"];
         $car->km = $data["km"];
         $car->save();
+        $car->optionals()->sync($data['optionals']);
 
         return redirect()->route("cars.show", $car->id)->with('updated', 'La machinetta ' . $car->model . ' con targa ' . $car->plate . ' è stata modificata!');;
     }

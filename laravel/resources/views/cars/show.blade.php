@@ -19,6 +19,15 @@
                 <h3>Car Model: {{ $car->model }}</h3>
                 <h4>Year: {{ $car->year }}</h4>
                 <h4>Kms: {{ $car->km }}</h4>
+                <ul>
+                    @forelse ($car->optionals as $optional)
+                        <li>
+                            {{ $optional->name }}
+                        </li>
+                    @empty
+                        La macchina non ha nessun optional!
+                    @endforelse
+                </ul>
             </div>
     </div>
             
