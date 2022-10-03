@@ -21,7 +21,7 @@ const router = new VueRouter({
             component:  OptionalsIndex
         },
         {
-            path: '/cars/:id',
+            path: '/carsShow/:id',
             name: 'carShow',
             component:  CarShow
         }

@@ -18038,7 +18038,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'optionals',
     component: _pages_OptionalsIndex_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/cars/:id',
+    path: '/carsShow/:id',
     name: 'carShow',
     component: _pages_CarShow_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
