@@ -29,5 +29,7 @@
             <h2>There are no cars</h2>
         @endforelse
     </div>
+
+    {{ $cars->links() }}
             
 @endsection
